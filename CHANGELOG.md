@@ -1,3 +1,7 @@
+# 0.7.4
+
+- Selector onChange callback called with an object instead of id
+
 # 0.7.2 & 0.7.3
 
 - Hotfixes for AnimatedMenu's transition
