@@ -1,6 +1,6 @@
 import React, { PropTypes, Component } from 'react'
 import classNamesBind from 'classnames/bind'
-import styles from '@klarna/ui-css-components/src/components/field.scss'
+import styles from '@klarna/ui-css-components/src/components/input.scss'
 import * as programmaticFocus from '../lib/features/programmaticFocus'
 import * as fieldStates from '../lib/features/fieldStates'
 import * as inlinedIcon from '../lib/features/inlinedIcon'
@@ -9,7 +9,7 @@ import { handleKeyDown } from '../lib/features/keyboardEvents'
 
 const classNames = classNamesBind.bind(styles)
 
-export default class Field extends Component {
+export default class Input extends Component {
 
   componentDidMount () {
     programmaticFocus.maybeFocus(document)(this.props.focus, this.refs.input)
@@ -25,6 +25,7 @@ export default class Field extends Component {
       className,
       centered,
       disabled,
+      giant,
       icon,
       label,
       loading,
@@ -39,8 +40,9 @@ export default class Field extends Component {
 
     const classes = {
       field: classNames(
-        (icon ? 'cui__field--icon' : 'cui__field'), {
+        (icon ? 'cui__input--icon' : 'cui__input'), {
           big,
+          giant,
           'is-centered': centered,
           'is-filled': value != null && value !== '',
           'is-loading': loading,
@@ -53,13 +55,13 @@ export default class Field extends Component {
         className),
       label: classNames(
         icon
-          ? 'cui__field--icon__label'
-          : 'cui__field__label'
+          ? 'cui__input--icon__label'
+          : 'cui__input__label'
       ),
       input: classNames(
         icon
-          ? 'cui__field--icon__input'
-          : 'cui__field__input'
+          ? 'cui__input--icon__input'
+          : 'cui__input__input'
       )
     }
 
@@ -70,9 +72,9 @@ export default class Field extends Component {
       >
         {
           inlinedIcon.renderInlinedIcon(this.props, {
-            icon: classNames('cui__field--icon__icon'),
-            fill: classNames('cui__field--icon__icon__fill'),
-            stroke: classNames('cui__field--icon__icon__stroke')
+            icon: classNames('cui__input--icon__icon'),
+            fill: classNames('cui__input--icon__icon__fill'),
+            stroke: classNames('cui__input--icon__icon__stroke')
           })
         }
 
@@ -94,9 +96,10 @@ export default class Field extends Component {
   }
 }
 
-Field.defaultProps = {
+Input.defaultProps = {
   big: false,
   centered: false,
+  giant: false,
   loading: false,
   ...inlinedIcon.defaultProps,
   ...fieldStates.defaultProps,
@@ -105,9 +108,10 @@ Field.defaultProps = {
   ...size.defaultProps
 }
 
-Field.propTypes = {
+Input.propTypes = {
   big: PropTypes.bool,
   centered: PropTypes.bool,
+  giant: PropTypes.bool,
   loading: PropTypes.bool,
   label: PropTypes.string.isRequired,
   onBlur: PropTypes.func,
