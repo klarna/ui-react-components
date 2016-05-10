@@ -13,7 +13,7 @@ export default function Fields () {
       <Subtitle>Controlled</Subtitle>
       <h5>Normal</h5>
       <Code>
-        <Field label='Enter your email' onTab={() => alert('tab')} onEnter={() => alert('enter')} />
+        <Field centered label='Enter your email' onTab={() => alert('tab')} onEnter={() => alert('enter')} />
       </Code>
 
       <h5>Big</h5>

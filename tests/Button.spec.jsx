@@ -118,4 +118,25 @@ describe('Button', () => {
       deepEqual(props, { foo, bar })
     })
   })
+
+  describe('customize', () => {
+    const button = render({
+      customize: { backgroundColor: 'blue', color: 'red' } })
+
+    describe('color', () => {
+      it('set style color to the new color', () => {
+        equal(button.props.style.color, 'red')
+      })
+    })
+
+    describe('backgroundColor', () => {
+      it('set style background-color to the new color', () => {
+        equal(button.props.style.backgroundColor, 'blue')
+      })
+
+      it('set style border-color to the new color', () => {
+        equal(button.props.style.borderColor, 'blue')
+      })
+    })
+  })
 })
