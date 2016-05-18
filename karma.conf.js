@@ -31,7 +31,18 @@ module.exports = function (config) {
     reporters: ['spec', 'saucelabs', 'coverage'],
 
     coverageReporter: {
-      type: 'text'
+      reporters: [
+        {type: 'html', dir: 'coverage'},
+	{type: 'text'}
+      ],
+      check: {
+        global: {
+          statements: 93,
+          branches: 93,
+          functions: 93,
+          lines: 93
+        }
+      }
     },
 
     colors: true,
