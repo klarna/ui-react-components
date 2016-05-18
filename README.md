@@ -94,6 +94,12 @@ BROWSER=PhantomJS,Chrome,Safari,Firefox npm test
 BROWSER=PhantomJS,Chrome,Firefox npm test
 ```
 
+## Running the tests on SauceLabs
+```sh
+SAUCE_USERNAME=<your_sl_username> SAUCE_ACCESS_KEY=<your_sl_passwd> BROWSER=SL_IE_10,SL_IE_11,SL_MAC_SAFARI_9_0,SL_Android_4_3,SL_Android_5_0,SL_IOS_9_2 npm run test:saucelabs
+```
+
+
 ## License
 
 Please check the [LICENSE](LICENSE) file.
