@@ -28,7 +28,11 @@ module.exports = function (config) {
       noInfo: true
     },
 
-    reporters: ['spec', 'saucelabs'],
+    reporters: ['spec', 'saucelabs', 'coverage'],
+
+    coverageReporter: {
+      type: 'text'
+    },
 
     colors: true,
     logLevel: config.LOG_INFO,
