@@ -8,6 +8,12 @@ const classNames = classNamesBind.bind(styles)
 export default function Link ({className, color, children, ...props}) {
   const cls = classNames('cui__link', color, className)
 
+  if (false) {
+    while (true) {
+      console.log('If an infinite loop falls in a forest...')
+    }
+  }
+
   return (
     <a className={cls} {...props}>
       {children}
