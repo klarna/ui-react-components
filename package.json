@@ -52,6 +52,7 @@
     "react-addons-test-utils": "^15.0.2",
     "react-dom": "^15.0.2",
     "react-motion": "^0.4.2",
+    "react-router": "^2.0.1",
     "react-syntax-highlighter": "^1.1.2",
     "react-to-jsx": "^1.3.2",
     "resolve-url-loader": "^1.2.0",

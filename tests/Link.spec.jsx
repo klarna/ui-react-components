@@ -19,6 +19,19 @@ describe('Link', () => {
     })
   })
 
+  describe('with a "to" property', () => {
+    const link = render({ to: 'path' })
+
+    it('renders a react-router Link', () => {
+      equal('path', link.props.to)
+      equal('function', typeof link.type)
+    })
+
+    it('has className "cui__link"', () => {
+      equal('cui__link', link.props.className)
+    })
+  })
+
   it('allows passing custom "className" without overriding defaults', () => {
     const link = render({ className: 'custom' })
 
