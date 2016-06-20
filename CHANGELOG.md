@@ -1,3 +1,27 @@
+# 0.12.0
+
+- Update all icons to use the CSS classes
+- Remove the icon HOC
+
+# 0.11.0
+
+- Update CSS components with default margins to 0
+- Add the `margins` flag to text components so text margins can be re enabled
+- Use components consistently throughout the showroom
+
+# 0.10.2
+
+- Add pad lock icon
+- Updated the css component version to support ie9 fields
+
+# 0.10.1
+
+- Change prop type of menu label to node
+
+# 0.10.0
+
+- Add legal variation of the Switch component
+
 # 0.9.0
 
 - Add Checklist component
