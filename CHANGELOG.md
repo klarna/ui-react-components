@@ -1,3 +1,31 @@
+# 0.12.7
+
+- Fix 'aria-labelledby' attribute on SVG in Checklist component
+
+# 0.12.6
+
+- Update Switch "checked" state in `componentWillReceiveProps`, based on the "checked" prop.
+
+# 0.12.5
+
+- Add `Dropdown` component
+
+# 0.12.4
+
+- Add a field with details icon inside
+
+# 0.12.3
+
+- Icons can receive `className` prop
+
+# 0.12.2
+
+- Add Cancel icon
+
+# 0.12.1
+
+- Add `viewBox` property to all icons
+
 # 0.12.0
 
 - Update all icons to use the CSS classes
