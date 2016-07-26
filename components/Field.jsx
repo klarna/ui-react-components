@@ -98,6 +98,9 @@ export default class Field extends Component {
     }
     : undefined
 
+    // clean props to be passed to input
+    const { onTab, onEnter, bottom, center, left, right, top, ...rest } = props
+
     return (
       <div
         className={classes.field}
@@ -125,7 +128,7 @@ export default class Field extends Component {
           onKeyDown={handleKeyDown(this.props)}
           onFocus={onFocus}
           ref='input'
-          {...props}
+          {...rest}
         />
       </div>
     )
