@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Button from '../components/Button'
+import Customize from '../components/Customize'
 import PayButton from '../components/PayButton'
 import { BackButton, CloseButton, HamburgerButton, OptionsButton, SearchButton } from '../components/IconButton'
 import Block from '../components/Block'
@@ -12,6 +13,13 @@ export default function Buttons () {
   return (
     <div>
       <SecondaryTitle color='blue' margins>Primary</SecondaryTitle>
+
+      <Subtitle margins>Regular</Subtitle>
+      <Code>
+        <Customize button={{textColor: '#F9FF3C', backgroundColor: '#3500C8'}}>
+          <Button>Beautiful!</Button>
+        </Customize>
+      </Code>
 
       <Subtitle margins>Regular</Subtitle>
       <Code>
