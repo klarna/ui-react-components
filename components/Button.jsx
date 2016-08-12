@@ -4,11 +4,11 @@ import classNamesBind from 'classnames/bind'
 import defaultStyles from '@klarna/ui-css-components/src/components/button.scss'
 import parseColor from 'parse-color'
 
-export default function Button (props) {
+export default function Button (props, context) {
   const {
     children,
     className,
-    customize,
+    customize: propsCustomize,
     design,
     disabled,
     loading,
@@ -16,6 +16,8 @@ export default function Button (props) {
     styles,
     success,
     ...remainingProps } = props
+
+  const customize = propsCustomize || context && context.customize && context.customize.button
 
   const content =
     success && '✔' || !loading && children
@@ -59,6 +61,10 @@ Button.defaultProps = {
 
 Button.designs = ['primary', 'secondary']
 Button.sizes = ['small', 'big']
+
+Button.contextTypes = {
+  customize: PropTypes.object
+}
 
 Button.propTypes = {
   children: PropTypes.node,
