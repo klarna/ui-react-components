@@ -10,6 +10,8 @@ import {
   SecondaryTitle,
   Subtitle
 } from '../components/Text'
+import Theme from '../components/Theme'
+import ThemeableField from '../components/themeable/Field'
 import Code from './Code'
 
 export default function Fields () {
@@ -180,6 +182,15 @@ export default function Fields () {
             icon='details'
             label='This is for writing some details here' />
         </Fieldset>
+      </Code>
+
+      <SecondaryTitle margins>Themeable</SecondaryTitle>
+      <Code>
+        <Theme customizations={{color_border: '#660080', color_border_selected: '#00ce3e'}}>
+          <div>
+            <ThemeableField label='Address' value='16, Corn street' />
+          </div>
+        </Theme>
       </Code>
     </div>
   )
