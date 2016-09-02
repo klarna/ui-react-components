@@ -6,6 +6,8 @@ import PayButton from '../components/PayButton'
 import { BackButton, CloseButton, HamburgerButton, OptionsButton, SearchButton } from '../components/IconButton'
 import Block from '../components/Block'
 import { SecondaryTitle, Subtitle } from '../components/Text'
+import ThemeableButton from '../components/themeable/Button'
+import Theme from '../components/Theme'
 import Code from './Code'
 
 export default function Buttons () {
@@ -109,6 +111,21 @@ export default function Buttons () {
         </Block>
       </Code>
 
+      <SecondaryTitle margins>Themeable</SecondaryTitle>
+      <Code>
+        <Theme customizations={{color_button: '#660080', color_button_text: '#00ce3e'}}>
+          <div>
+            <ThemeableButton>
+              This button gets the color from context
+            </ThemeableButton>
+          </div>
+          <div style={{paddingTop: '20px'}}>
+            <ThemeableButton design='secondary'>
+              This secondary button gets the color from context
+            </ThemeableButton>
+          </div>
+        </Theme>
+      </Code>
     </div>
   )
 }
