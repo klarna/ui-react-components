@@ -105,12 +105,18 @@ export default function Texts () {
             <ThemeablePrimaryTitle margins>
               Hello from the other side
             </ThemeablePrimaryTitle>
+
             <ThemeableSecondaryTitle margins>
               Hello from the other side
             </ThemeableSecondaryTitle>
+
             <ThemeableSubtitle margins>
               Hello from the other side
             </ThemeableSubtitle>
+
+            <ThemeableParagraph margins>
+              Primary Paragraph Primary Paragraph Primary Paragraph Primary Paragraph Primary Paragraph
+            </ThemeableParagraph>
           </div>
         </Theme>
       </Code>
