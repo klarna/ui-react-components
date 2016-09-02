@@ -7,6 +7,7 @@ import Theme from '../components/Theme'
 import ThemeablePrimaryTitle from '../components/themeable/texts/PrimaryTitle'
 import ThemeableSecondaryTitle from '../components/themeable/texts/SecondaryTitle'
 import ThemeableSubtitle from '../components/themeable/texts/Subtitle'
+import ThemeableParagraph from '../components/themeable/texts/Paragraph'
 
 export default function Texts () {
   return (
@@ -100,7 +101,7 @@ export default function Texts () {
 
       <SecondaryTitle>Themeable</SecondaryTitle>
       <Code>
-        <Theme customizations={{color_header: '#00ce3e'}}>
+        <Theme customizations={{color_header: '#00ce3e', color_text: '#660080'}}>
           <div>
             <ThemeablePrimaryTitle margins>
               Hello from the other side

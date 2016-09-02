@@ -3,7 +3,14 @@ import { withPropsFromContext } from 'react-context-props'
 
 const themeable = (Target, adapter) => {
   const ThemeableComponent = withPropsFromContext(
-    (props) => <Target {...adapter(props)} />,
+    ({ customizations, ...props }) => (
+      <Target
+        {...{
+          ...props,
+          ...customizations ? adapter(customizations, props) : {}
+        }}
+      />
+    ),
     ['customizations']
   )
 
