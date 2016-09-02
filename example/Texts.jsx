@@ -3,6 +3,9 @@ import Code from './Code'
 import Block from '../components/Block'
 import { Amount, PrimaryTitle, SecondaryTitle, Subtitle, Paragraph, TextLabel } from '../components/Text'
 import Link from '../components/Link'
+import Theme from '../components/Theme'
+import ThemeablePrimaryTitle from '../components/themeable/texts/PrimaryTitle'
+import ThemeableSecondaryTitle from '../components/themeable/texts/SecondaryTitle'
 
 export default function Texts () {
   return (
@@ -92,6 +95,20 @@ export default function Texts () {
         <Block blue>
           <Amount color='white'>1500€</Amount>
         </Block>
+      </Code>
+
+      <SecondaryTitle>Themeable</SecondaryTitle>
+      <Code>
+        <Theme customizations={{color_header: '#00ce3e'}}>
+          <div>
+            <ThemeablePrimaryTitle margins>
+              Hello from the other side
+            </ThemeablePrimaryTitle>
+            <ThemeableSecondaryTitle margins>
+              Hello from the other side
+            </ThemeableSecondaryTitle>
+          </div>
+        </Theme>
       </Code>
     </div>
   )
