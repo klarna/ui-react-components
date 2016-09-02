@@ -1,16 +1,8 @@
 import React from 'react'
 import Button from '../Button'
-import { withPropsFromContext } from 'react-context-props'
+import themeable from '../../lib/decorators/themeable'
 
-function ThemeableButton ({ customizations, ...props}) {
-  const customize = customizations && {
-    backgroundColor: customizations.color_button,
-    textColor: customizations.color_button_text
-  }
-
-  return (
-    <Button customize={customize} {...props} />
-  )
-}
-
-export default withPropsFromContext(ThemeableButton, ['customizations'])
+export default themeable(Button, (customizations) => ({
+  backgroundColor: customizations.color_button,
+  textColor: customizations.color_button_text
+}))

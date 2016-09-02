@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import { getContextualizer } from 'react-context-props'
 
-export default getContextualizer({
+const Theme = getContextualizer({
   customizations: PropTypes.shape({
     color_button: PropTypes.string,
     color_button_text: PropTypes.string,
@@ -17,3 +17,7 @@ export default getContextualizer({
     radius_border: PropTypes.string
   })
 })
+
+Theme.displayName = 'Theme'
+
+export default Theme
