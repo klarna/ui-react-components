@@ -6,6 +6,7 @@ import Link from '../components/Link'
 import Theme from '../components/Theme'
 import ThemeablePrimaryTitle from '../components/themeable/texts/PrimaryTitle'
 import ThemeableSecondaryTitle from '../components/themeable/texts/SecondaryTitle'
+import ThemeableSubtitle from '../components/themeable/texts/Subtitle'
 
 export default function Texts () {
   return (
@@ -107,6 +108,9 @@ export default function Texts () {
             <ThemeableSecondaryTitle margins>
               Hello from the other side
             </ThemeableSecondaryTitle>
+            <ThemeableSubtitle margins>
+              Hello from the other side
+            </ThemeableSubtitle>
           </div>
         </Theme>
       </Code>
