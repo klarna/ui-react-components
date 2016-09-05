@@ -4,79 +4,123 @@ import defaultStyles from '@klarna/ui-css-components/src/components/installments
 
 const baseClass = 'cui__selector--installments'
 
-export default function Installments (props) {
-  const {
-    className,
-    customize,
-    options,
-    name,
-    onChange,
-    value: selected,
-    styles,
-    ...remainingProps } = props
-
-  const classNames = classNamesBind.bind({
-    ...defaultStyles,
-    ...styles
-  })
-
-  const cls = classNames(baseClass, className)
-
-  const dynamicStyles = customize
-  ? {
-    borderColor: customize.borderColor,
-    borderRadius: customize.borderRadius
-  }
-  : undefined
-
-  const highlightDynamicStyles = customize
-  ? {
-    borderColor: customize.borderColorSelected,
-    borderRadius: customize.borderRadius
-  }
-  : undefined
-
-  const items = options.map(({ key, value, info, connector }, index) => {
-    const id = `${name}-${key}`
-
-    return [
-      (<input
-        className={classNames(`${baseClass}__input`)}
-        type='radio'
-        name={name}
-        key={`input-${id}`}
-        id={id}
-        onChange={onChange && (() => onChange(key))}
-        checked={key === selected} />),
-      (<label
-        key={`label-${id}`}
-        className={classNames(`${baseClass}__label`, 'third')}
-        htmlFor={id}>
-        <span className={classNames(`${baseClass}__label__value`)}>{value}</span>
-        <span className={classNames(`${baseClass}__label__connector`)}>{connector}</span>
-        <span className={classNames(`${baseClass}__label__info`)}>{info}</span>
-        <span className={classNames(`${baseClass}__label__highlight`)} style={highlightDynamicStyles} />
-      </label>)
-    ]
-  })
-
-  return (
-    <div className={cls} {...remainingProps} style={dynamicStyles}>
-      {items.reduce((a, b) => a.concat(b), [])}
-    </div>
-  )
+const classes = {
+  input: `${baseClass}__input`,
+  label: `${baseClass}__label`,
+  labelConnector: `${baseClass}__label__connector`,
+  labelHighlight: `${baseClass}__label__highlight`,
+  labelInfo: `${baseClass}__label__info`,
+  labelValue: `${baseClass}__label__value`
 }
 
-Installments.optionsSchema = PropTypes.shape({
-  connector: PropTypes.string.isRequired,
-  info: PropTypes.string.isRequired,
-  value: PropTypes.node.isRequired
+export default React.createClass({
+  displayName: 'Installments',
+
+  propTypes: {
+    options: PropTypes.arrayOf(PropTypes.shape({
+      connector: PropTypes.string.isRequired,
+      info: PropTypes.string.isRequired,
+      value: PropTypes.node.isRequired
+    })).isRequired,
+    className: PropTypes.string,
+    customize: PropTypes.shape({
+      borderColor: PropTypes.string.isRequired,
+      borderColorSelected: PropTypes.string.isRequired,
+      borderRadius: PropTypes.string.isRequired,
+      labelColor: PropTypes.string.isRequired
+    }),
+    focus: PropTypes.string,
+    onBlur: PropTypes.func,
+    onChange: PropTypes.func,
+    onFocus: PropTypes.func,
+    name: PropTypes.string.isRequired,
+    value: PropTypes.string
+  },
+
+  componentDidMount () {
+    if (
+      this.props.focus &&
+      document.activeElement !== this.refs[this.props.focus]
+    ) {
+      this.refs[this.props.focus].focus()
+    }
+  },
+
+  componentDidUpdate () {
+    if (
+      this.props.focus &&
+      document.activeElement !== this.refs[this.props.focus]
+    ) {
+      this.refs[this.props.focus].focus()
+    }
+  },
+
+  render () {
+    const {
+      className,
+      customize,
+      focus,
+      name,
+      onBlur,
+      onChange,
+      onFocus,
+      options,
+      value: selected,
+      styles,
+      ...remainingProps
+    } = this.props
+
+    const classNames = classNamesBind.bind({
+      ...defaultStyles,
+      ...styles
+    })
+
+    const dynamicStyles = customize
+    ? {
+      borderColor: customize.borderColor,
+      borderRadius: customize.borderRadius
+    }
+    : undefined
+
+    const highlightDynamicStyles = customize
+    ? {
+      borderColor: customize.borderColorSelected,
+      borderRadius: customize.borderRadius
+    }
+    : undefined
+
+    return (<div
+      className={classNames(baseClass, className)}
+      style={dynamicStyles}
+      {...remainingProps}>
+      {options.map(({ key, value, info, connector }, index) => {
+        const id = `${name}-${key}`
+
+        return [
+          (<input
+            className={classNames(classes.input)}
+            type='radio'
+            name={name}
+            key={`input-${id}`}
+            ref={key}
+            id={id}
+            onBlur={onBlur}
+            onChange={onChange && (() => onChange(key))}
+            onFocus={(e) => onFocus && onFocus(key, e)}
+            checked={key === selected}
+            value={key}
+           />),
+          (<label
+            key={`label-${id}`}
+            className={classNames(classes.label, 'third', { 'is-focused': focus === key })}
+            htmlFor={id}>
+            <span className={classNames(classes.labelValue)}>{value}</span>
+            <span className={classNames(classes.labelConnector)}>{connector}</span>
+            <span className={classNames(classes.labelInfo)}>{info}</span>
+            <span className={classNames(classes.labelHighlight)} style={highlightDynamicStyles} />
+          </label>)
+        ]
+      })}
+    </div>)
+  }
 })
-
-Installments.propTypes = {
-  options: PropTypes.arrayOf(Installments.optionsSchema).isRequired,
-  className: PropTypes.string,
-  onChange: PropTypes.func,
-  name: PropTypes.string.isRequired,
-  value: PropTypes.string
-}
