@@ -102,7 +102,7 @@ export default function Texts () {
 
       <SecondaryTitle>Themeable</SecondaryTitle>
       <Code>
-        <Theme customizations={{color_header: '#00ce3e', color_text: '#660080'}}>
+        <Theme customizations={{color_header: '#00ce3e', color_text: '#660080', color_text_secondary: 'red'}}>
           <div>
             <ThemeablePrimaryTitle margins>
               Hello from the other side
@@ -117,7 +117,19 @@ export default function Texts () {
             </ThemeableSubtitle>
 
             <ThemeableParagraph margins>
-              Primary Paragraph Primary Paragraph Primary Paragraph Primary Paragraph Primary Paragraph
+              Primary Paragraph, default design
+            </ThemeableParagraph>
+
+            <ThemeableParagraph margins design='primary'>
+              Primary Paragraph, primary design
+            </ThemeableParagraph>
+
+            <ThemeableParagraph margins design='secondary'>
+              Primary Paragraph, secondary design
+            </ThemeableParagraph>
+
+            <ThemeableParagraph margins design='legal'>
+              Primary Paragraph, legal design
             </ThemeableParagraph>
           </div>
         </Theme>
