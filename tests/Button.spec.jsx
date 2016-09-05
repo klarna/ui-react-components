@@ -110,7 +110,8 @@ describe('Button', () => {
       const button = render({
         customize: {
           textColor: 'red',
-          backgroundColor: 'brown'
+          backgroundColor: 'brown',
+          borderRadius: '6px'
         }
       }, 'Click me')
 
@@ -128,6 +129,7 @@ describe('Button', () => {
         equal(button.props.style.color, 'red')
         equal(button.props.style.backgroundColor, 'brown')
         equal(button.props.style.borderColor, 'brown')
+        equal(button.props.style.borderRadius, '6px')
       })
 
       describe('loading', () => {
@@ -135,7 +137,8 @@ describe('Button', () => {
           loading: true,
           customize: {
             textColor: 'red',
-            backgroundColor: 'brown'
+            backgroundColor: 'brown',
+            borderRadius: '6px'
           }
         }, 'Click me')
 
@@ -163,7 +166,8 @@ describe('Button', () => {
         design: 'secondary',
         customize: {
           textColor: 'yellow',
-          backgroundColor: 'bisque'
+          backgroundColor: 'bisque',
+          borderRadius: '6px'
         }
       }, 'Click me')
 
@@ -193,6 +197,7 @@ describe('Button', () => {
         equal(button.props.style.color, 'bisque')
         equal(button.props.style.backgroundColor, 'bisque')
         equal(button.props.style.borderColor, 'bisque')
+        equal(button.props.style.borderRadius, '6px')
       })
 
       describe('disabled', () => {
@@ -201,7 +206,8 @@ describe('Button', () => {
           disabled: true,
           customize: {
             textColor: 'yellow',
-            backgroundColor: 'bisque'
+            backgroundColor: 'bisque',
+            borderRadius: '6px'
           }
         }, 'Click me')
 
@@ -216,7 +222,8 @@ describe('Button', () => {
           design: 'secondary',
           customize: {
             textColor: 'yellow',
-            backgroundColor: 'bisque'
+            backgroundColor: 'bisque',
+            borderRadius: '6px'
           }
         }, 'Click me')
 

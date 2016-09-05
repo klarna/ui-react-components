@@ -174,7 +174,9 @@ describe('Field', () => {
       const field = render({
         customize: {
           borderColor: 'red',
-          borderColorSelected: 'pink'
+          borderColorSelected: 'pink',
+          borderRadius: '4px',
+          labelColor: 'brown'
         },
         label: 'Mandatory label'
       })
@@ -189,7 +191,9 @@ describe('Field', () => {
       const field = render({
         customize: {
           borderColor: 'red',
-          borderColorSelected: 'pink'
+          borderColorSelected: 'pink',
+          borderRadius: '4px',
+          labelColor: 'brown'
         },
         label: 'Mandatory label'
       })
@@ -209,7 +213,9 @@ describe('Field', () => {
       const field = render({
         customize: {
           borderColor: 'red',
-          borderColorSelected: 'pink'
+          borderColorSelected: 'pink',
+          borderRadius: '4px',
+          labelColor: 'brown'
         },
         focus: true,
         label: 'Mandatory label'
