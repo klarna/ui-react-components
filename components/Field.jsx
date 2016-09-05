@@ -98,6 +98,12 @@ export default class Field extends Component {
     }
     : undefined
 
+    const labelDynamicStyles = useDynamicStyles
+    ? {
+      color: customize.labelColor
+    }
+    : undefined
+
     return (
       <div
         className={classes.field}
@@ -114,7 +120,7 @@ export default class Field extends Component {
           })
         }
 
-        <label className={classes.label}>{label}</label>
+        <label className={classes.label} style={labelDynamicStyles}>{label}</label>
 
         <input
           className={classes.input}
