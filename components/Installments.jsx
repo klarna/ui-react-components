@@ -74,10 +74,6 @@ export default React.createClass({
       ...remainingProps
     } = this.props
 
-    const {
-      hover
-    } = this.state
-
     const classNames = classNamesBind.bind({
       ...defaultStyles,
       ...styles
@@ -86,7 +82,7 @@ export default React.createClass({
     const dynamicStyles = customize
     ? {
       borderColor: customize.borderColor,
-      borderRadius: customize.borderRadius,
+      borderRadius: customize.borderRadius
     }
     : undefined
 

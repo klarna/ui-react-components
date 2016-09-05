@@ -74,7 +74,7 @@ export default function Switches () {
 
       <SecondaryTitle margins>Themeable</SecondaryTitle>
       <Code>
-        <Theme customizations={{color_checkbox: '#660080', color_checkbox_checkmark: '#00ce3e' }}>
+        <Theme customizations={{color_checkbox: '#660080', color_checkbox_checkmark: '#00ce3e'}}>
           <ThemeableSwitch name='fries'>Would you like fries?</ThemeableSwitch>
         </Theme>
       </Code>
