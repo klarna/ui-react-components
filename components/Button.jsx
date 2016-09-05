@@ -65,7 +65,8 @@ Button.propTypes = {
   className: PropTypes.string,
   customize: PropTypes.shape({
     textColor: PropTypes.string.isRequired,
-    backgroundColor: PropTypes.string.isRequired
+    backgroundColor: PropTypes.string.isRequired,
+    borderRadius: PropTypes.string.isRequired
   }),
   design: PropTypes.oneOf(Button.designs),
   size: PropTypes.oneOf(Button.sizes),
@@ -81,11 +82,12 @@ const renderButton = (content, classNames, disabled, loading, loaderColor, remai
   </button>
 )
 
-const renderDynamicallyStyledPrimaryButton = (content, classNames, labelClassNames, disabled, loading, loaderColor, {textColor, backgroundColor}, remainingProps) => (
+const renderDynamicallyStyledPrimaryButton = (content, classNames, labelClassNames, disabled, loading, loaderColor, {textColor, backgroundColor, borderRadius}, remainingProps) => (
   <button className={classNames} disabled={disabled} {...remainingProps} style={{
     color: textColor,
     backgroundColor: backgroundColor,
-    borderColor: backgroundColor
+    borderColor: backgroundColor,
+    borderRadius
   }}>
     <span className={labelClassNames.label}>
       {loading ? <Loader inline color={loaderColor}/> : content}
@@ -93,11 +95,12 @@ const renderDynamicallyStyledPrimaryButton = (content, classNames, labelClassNam
   </button>
 )
 
-const renderDynamicallyStyledSecondaryButton = (content, classNames, labelClassNames, disabled, loading, loaderColor, {textColor, backgroundColor}, remainingProps) => (
+const renderDynamicallyStyledSecondaryButton = (content, classNames, labelClassNames, disabled, loading, loaderColor, {textColor, backgroundColor, borderRadius}, remainingProps) => (
   <button className={classNames} disabled={disabled} {...remainingProps} style={{
     color: backgroundColor,
     backgroundColor: loading ? undefined : backgroundColor,
-    borderColor: backgroundColor
+    borderColor: backgroundColor,
+    borderRadius
   }}>
     <div className={labelClassNames.label}>
       {loading ? <Loader inline color={loaderColor}/> : content}

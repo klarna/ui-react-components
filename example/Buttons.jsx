@@ -113,7 +113,7 @@ export default function Buttons () {
 
       <SecondaryTitle margins>Themeable</SecondaryTitle>
       <Code>
-        <Theme customizations={{color_button: '#660080', color_button_text: '#00ce3e'}}>
+        <Theme customizations={{color_button: '#660080', color_button_text: '#00ce3e', radius_border: '0px'}}>
           <div>
             <ThemeableButton>
               This button gets the color from context
