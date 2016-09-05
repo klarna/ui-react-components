@@ -1,7 +1,7 @@
 import Installments from '../Installments'
 import themeable from '../../lib/decorators/themeable'
 
-export default themeable(Installments, ({ customizations, ...props }) => ({
+export default themeable(Installments, (customizations, props) => ({
   ...props,
   customize: {
     ...props.customize,

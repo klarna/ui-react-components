@@ -8,7 +8,6 @@ import ThemeableParagraph from '../components/themeable/texts/Paragraph'
 import ThemeablePrimaryTitle from '../components/themeable/texts/PrimaryTitle'
 import ThemeableSecondaryTitle from '../components/themeable/texts/SecondaryTitle'
 import ThemeableSubtitle from '../components/themeable/texts/Subtitle'
-import ThemeableParagraph from '../components/themeable/texts/Paragraph'
 
 export default function Texts () {
   return (
