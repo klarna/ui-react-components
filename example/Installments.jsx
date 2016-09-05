@@ -1,7 +1,9 @@
 import React from 'react'
 import InstallmentsComponent from '../components/Installments'
+import Theme from '../components/Theme'
+import ThemeableInstallmentsComponent from '../components/themeable/Installments'
 import UncontrolledInstallments from '../components/uncontrolled/Installments'
-import { Subtitle } from '../components/Text'
+import { SecondaryTitle, Subtitle } from '../components/Text'
 import Code from './Code'
 
 const options = [
@@ -31,6 +33,18 @@ export default function Installments () {
           value='installments_24'
           options={options}
         />
+      </Code>
+
+      <SecondaryTitle margins>Themeable</SecondaryTitle>
+      <Code>
+        <Theme customizations={{color_border: '#660080', color_border_selected: '#00ce3e', color_text_secondary: '#ff7777', radius_border: '10px'}}>
+          <ThemeableInstallmentsComponent
+            onChange={(key) => console.log('You selected', key)}
+            name='installments'
+            value='installments_24'
+            options={options}
+          />
+        </Theme>
       </Code>
     </div>
   )

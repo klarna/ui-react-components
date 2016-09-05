@@ -7,6 +7,7 @@ const baseClass = 'cui__selector--installments'
 export default function Installments (props) {
   const {
     className,
+    customize,
     options,
     name,
     onChange,
@@ -20,6 +21,20 @@ export default function Installments (props) {
   })
 
   const cls = classNames(baseClass, className)
+
+  const dynamicStyles = customize
+  ? {
+    borderColor: customize.borderColor,
+    borderRadius: customize.borderRadius
+  }
+  : undefined
+
+  const highlightDynamicStyles = customize
+  ? {
+    borderColor: customize.borderColorSelected,
+    borderRadius: customize.borderRadius
+  }
+  : undefined
 
   const items = options.map(({ key, value, info, connector }, index) => {
     const id = `${name}-${key}`
@@ -40,12 +55,13 @@ export default function Installments (props) {
         <span className={classNames(`${baseClass}__label__value`)}>{value}</span>
         <span className={classNames(`${baseClass}__label__connector`)}>{connector}</span>
         <span className={classNames(`${baseClass}__label__info`)}>{info}</span>
+        <span className={classNames(`${baseClass}__label__highlight`)} style={highlightDynamicStyles} />
       </label>)
     ]
   })
 
   return (
-    <div className={cls} {...remainingProps}>
+    <div className={cls} {...remainingProps} style={dynamicStyles}>
       {items.reduce((a, b) => a.concat(b), [])}
     </div>
   )

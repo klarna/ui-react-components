@@ -87,7 +87,6 @@ export default function Texts () {
             Some paragraph with <Link color='white' href='#'>a link</Link>.
           </Paragraph>
         </Block>
-
       </Code>
 
       <SecondaryTitle small color='blue' margins>Amount</SecondaryTitle>
