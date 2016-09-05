@@ -78,7 +78,13 @@ export default React.createClass({
     const dynamicStyles = customize
     ? {
       borderColor: customize.borderColor,
-      borderRadius: customize.borderRadius
+      borderRadius: customize.borderRadius,
+    }
+    : undefined
+
+    const labelDynamicStyles = customize
+    ? {
+      color: customize.labelColor
     }
     : undefined
 
@@ -113,6 +119,7 @@ export default React.createClass({
           (<label
             key={`label-${id}`}
             className={classNames(classes.label, 'third', { 'is-focused': focus === key })}
+            style={labelDynamicStyles}
             htmlFor={id}>
             <span className={classNames(classes.labelValue)}>{value}</span>
             <span className={classNames(classes.labelConnector)}>{connector}</span>

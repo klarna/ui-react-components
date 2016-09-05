@@ -37,7 +37,7 @@ export default function Installments () {
 
       <SecondaryTitle margins>Themeable</SecondaryTitle>
       <Code>
-        <Theme customizations={{color_border: '#660080', color_border_selected: '#00ce3e', color_text_secondary: '#ff7777', radius_border: '10px'}}>
+        <Theme customizations={{color_border: '#660080', color_border_selected: '#00ce3e', color_text: '#ff7777', radius_border: '10px'}}>
           <ThemeableInstallmentsComponent
             onChange={(key) => console.log('You selected', key)}
             name='installments'
