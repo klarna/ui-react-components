@@ -55,6 +55,10 @@ export default React.createClass({
     }
   },
 
+  getInitialState () {
+    return { hover: undefined }
+  },
+
   render () {
     const {
       className,
@@ -70,6 +74,10 @@ export default React.createClass({
       ...remainingProps
     } = this.props
 
+    const {
+      hover
+    } = this.state
+
     const classNames = classNamesBind.bind({
       ...defaultStyles,
       ...styles
@@ -79,12 +87,6 @@ export default React.createClass({
     ? {
       borderColor: customize.borderColor,
       borderRadius: customize.borderRadius,
-    }
-    : undefined
-
-    const labelDynamicStyles = customize
-    ? {
-      color: customize.labelColor
     }
     : undefined
 
@@ -119,7 +121,9 @@ export default React.createClass({
           (<label
             key={`label-${id}`}
             className={classNames(classes.label, 'third', { 'is-focused': focus === key })}
-            style={labelDynamicStyles}
+            style={this.labelDynamicStyles(id)}
+            onMouseEnter={() => this.onLabelMouseEnter(id)}
+            onMouseLeave={() => this.onLabelMouseLeave(id)}
             htmlFor={id}>
             <span className={classNames(classes.labelValue)}>{value}</span>
             <span className={classNames(classes.labelConnector)}>{connector}</span>
@@ -129,5 +133,25 @@ export default React.createClass({
         ]
       })}
     </div>)
+  },
+
+  onLabelMouseEnter (id) {
+    this.setState({ hover: id })
+  },
+
+  onLabelMouseLeave (id) {
+    this.setState({ hover: undefined })
+  },
+
+  labelDynamicStyles (id) {
+    const { customize } = this.props
+
+    if (!customize) {
+      return undefined
+    }
+
+    return id === this.state.hover
+    ? { color: customize.borderColorSelected }
+    : { color: customize.labelColor }
   }
 })
