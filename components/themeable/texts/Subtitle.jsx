@@ -1,4 +1,3 @@
-import React from 'react'
 import Subtitle from '../../texts/Subtitle'
 import themeable from '../../../lib/decorators/themeable'
 

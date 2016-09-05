@@ -1,4 +1,3 @@
-import React from 'react'
 import SecondaryTitle from '../../texts/SecondaryTitle'
 import themeable from '../../../lib/decorators/themeable'
 

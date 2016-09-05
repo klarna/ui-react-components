@@ -1,4 +1,3 @@
-import React from 'react'
 import Paragraph from '../../texts/Paragraph'
 import themeable from '../../../lib/decorators/themeable'
 

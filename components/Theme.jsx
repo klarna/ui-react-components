@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react'
+import { PropTypes } from 'react'
 import { getContextualizer } from 'react-context-props'
 
 const Theme = getContextualizer({
