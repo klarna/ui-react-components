@@ -186,7 +186,7 @@ export default function Fields () {
 
       <SecondaryTitle margins>Themeable</SecondaryTitle>
       <Code>
-        <Theme customizations={{color_border: '#660080', color_border_selected: '#00ce3e', color_text_secondary: '#ff7777'}}>
+        <Theme customizations={{color_border: '#660080', color_border_selected: '#00ce3e', color_text_secondary: '#ff7777', radius_border: '10px'}}>
           <div>
             <ThemeableField label='Address' value='16, Corn street' />
           </div>

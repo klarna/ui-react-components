@@ -94,6 +94,7 @@ export default class Field extends Component {
     const dynamicStyles = useDynamicStyles
     ? {
       borderColor: this.state.hover || focus ? customize.borderColorSelected : customize.borderColor,
+      borderRadius: customize.borderRadius,
       boxShadow: focus && `0 0 4px ${customize.borderColorSelected}`
     }
     : undefined
@@ -155,7 +156,9 @@ Field.propTypes = {
   centered: PropTypes.bool,
   customize: PropTypes.shape({
     borderColor: PropTypes.string.isRequired,
-    borderColorSelected: PropTypes.string.isRequired
+    borderColorSelected: PropTypes.string.isRequired,
+    borderRadius: PropTypes.string.isRequired,
+    labelColor: PropTypes.string.isRequired
   }),
   loading: PropTypes.bool,
   label: PropTypes.string.isRequired,
