@@ -60,7 +60,7 @@ export default class Dropdown extends Component {
     } = this.props
 
     const classNames = classNamesBind.bind({ ...defaultStyles, ...styles })
-    const problem = props.error || props.warning
+    const problem = error || warning
     const selectedOption = options && options.find((option) => String(option.value) === String(value))
 
     const classes = {
