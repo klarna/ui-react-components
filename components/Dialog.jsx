@@ -78,12 +78,12 @@ Dialog.Footer.propTypes = {
   styles: PropTypes.object
 }
 
-Dialog.Overlay = ({ children, className, show, styles, ...props }) => {
+Dialog.Overlay = ({ children, className, show, wide, styles, ...props }) => {
   const classNames = classNamesBind.bind({ ...defaultStyles, ...styles })
 
   return (
     <div
-      className={classNames('cui__dialog__overlay', { 'is-visible': show }, className)}>
+      className={classNames('cui__dialog__overlay', { 'is-visible': show }, { 'wide': wide }, className)}>
       <div
         className={classNames('cui__dialog__table')}>
         <div
