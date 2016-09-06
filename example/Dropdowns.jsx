@@ -1,8 +1,10 @@
 import React from 'react'
-import { SecondaryTitle, Subtitle } from '../components/Text'
+import { SecondaryTitle, Subtitle, Paragraph } from '../components/Text'
 import Code from './Code'
 import Dropdown from '../components/Dropdown'
 import Fieldset from '../components/Fieldset'
+import Theme from '../components/Theme'
+import ThemeableDropdown from '../components/themeable/Dropdown'
 
 export default function Dropdowns () {
   const options = [
@@ -104,6 +106,22 @@ export default function Dropdowns () {
       <Subtitle margins>No options</Subtitle>
       <Code>
         <Dropdown label='No options really' />
+      </Code>
+
+      <SecondaryTitle margins>Themeable</SecondaryTitle>
+      <Paragraph margins>Currently no support for border radii.</Paragraph>
+      <Code>
+        <Theme customizations={{color_border: '#660080', color_border_selected: '#00ce3e', color_text_secondary: 'red'}}>
+          <Fieldset>
+            <ThemeableDropdown top left size='1/2' label='Given name' options={options} />
+            <ThemeableDropdown center size='1/4' label='Middle name' options={options} />
+            <ThemeableDropdown top right size='1/4' label='Last name' options={options} focus='fake' />
+            <ThemeableDropdown left square size='1/5' label='Number' options={options} />
+            <ThemeableDropdown right square size='4/5' label='Street Address' options={options} />
+            <ThemeableDropdown left bottom size='2/5' label='Date of Birth' options={options} />
+            <ThemeableDropdown right bottom size='3/5' label='Mobile phone number' options={options} />
+          </Fieldset>
+        </Theme>
       </Code>
     </div>
   )

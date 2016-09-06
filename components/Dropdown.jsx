@@ -8,6 +8,14 @@ import { position, size } from '../lib/features/stacking'
 import { handleKeyDown } from '../lib/features/keyboardEvents'
 
 export default class Dropdown extends Component {
+  constructor () {
+    super()
+
+    this.state = {
+      hover: false
+    }
+  }
+
   componentDidMount () {
     programmaticFocus.maybeFocus(document)(this.props.focus, this.refs.select)
   }
@@ -16,10 +24,27 @@ export default class Dropdown extends Component {
     programmaticFocus.maybeFocus(document)(this.props.focus, this.refs.select)
   }
 
+  onMouseEnter () {
+    this.setState({
+      ...this.state,
+      hover: true
+    })
+  }
+
+  onMouseLeave () {
+    this.setState({
+      ...this.state,
+      hover: false
+    })
+  }
+
   render () {
     const {
       className,
+      customize,
       disabled,
+      error,
+      focus,
       label,
       loading,
       onBlur,
@@ -30,6 +55,7 @@ export default class Dropdown extends Component {
       square,
       styles,
       value,
+      warning,
       ...props
     } = this.props
 
@@ -59,12 +85,31 @@ export default class Dropdown extends Component {
       select: classNames('cui__dropdown--native__select')
     }
 
+    const hasNonDefaultState = disabled || warning || error
+    const useDynamicStyles = customize && !hasNonDefaultState
+
+    const dynamicStyles = useDynamicStyles
+    ? {
+      borderColor: this.state.hover || focus ? customize.borderColorSelected : customize.borderColor,
+      boxShadow: focus && `0 0 4px ${customize.borderColorSelected}`
+    }
+    : undefined
+
+    const labelDynamicStyles = useDynamicStyles
+    ? {
+      color: customize.labelColor
+    }
+    : undefined
+
     return (
       <div
         className={classes.dropdown}
         onClick={onClick}
+        onMouseEnter={this.onMouseEnter.bind(this)}
+        onMouseLeave={this.onMouseLeave.bind(this)}
+        style={dynamicStyles}
       >
-        <label className={classes.label}>{label}</label>
+        <label className={classes.label} style={labelDynamicStyles}>{label}</label>
         {
           selectedOption &&
             <div className={classes.currentOption}>{selectedOption.label}</div>
