@@ -146,8 +146,14 @@ export default React.createClass({
       return undefined
     }
 
+    const {
+      borderColor,
+      borderColorSelected,
+      labelColor
+    } = customize
+
     return id === this.state.hover
-    ? { color: customize.borderColorSelected }
-    : { color: customize.labelColor }
+    ? { borderColor, color: borderColorSelected }
+    : { borderColor, color: labelColor }
   }
 })
