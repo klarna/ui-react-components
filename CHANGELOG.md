@@ -1,3 +1,7 @@
+# 0.14.2
+
+- Add support for wide `Dialog`
+
 # 0.14.1
 
 - Fixed missing borderColor on themeable Installments
