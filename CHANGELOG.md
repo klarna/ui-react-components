@@ -1,3 +1,9 @@
+# 0.16.0
+
+- Revise support for customizable/themeable border-radius.
+  Currently we can only support vertically-stacked fields.
+- Add support for themeable Dropdown.
+
 # 0.15.0
 
 - Add support for wide `Dialog`
