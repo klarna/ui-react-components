@@ -1,4 +1,4 @@
-# 0.14.2
+# 0.15.0
 
 - Add support for wide `Dialog`
 
