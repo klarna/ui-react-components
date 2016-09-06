@@ -111,7 +111,7 @@ export default function Dropdowns () {
       <SecondaryTitle margins>Themeable</SecondaryTitle>
       <Paragraph margins>Currently no support for border radii.</Paragraph>
       <Code>
-        <Theme customizations={{color_border: '#660080', color_border_selected: '#00ce3e', color_text_secondary: 'red'}}>
+        <Theme customizations={{color_border: '#660080', color_border_selected: '#00ce3e', color_text_secondary: 'red', radius_border: '0px'}}>
           <Fieldset>
             <ThemeableDropdown top left size='1/2' label='Given name' options={options} />
             <ThemeableDropdown center size='1/4' label='Middle name' options={options} />

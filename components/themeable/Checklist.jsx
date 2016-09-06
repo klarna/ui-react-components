@@ -6,7 +6,8 @@ const ThemeableChecklist = themeable(Checklist, (customizations, props) => ({
   customize: {
     ...props.customize,
     borderColor: customizations.color_border,
-    borderRadius: customizations.radius_border
+    // TODO: border-radii are not themeable/customizable yet, but we can support 0px, e.g. squared design
+    borderRadius: customizations.radius_border === '0px' ? '0px' : undefined,
   }
 }))
 
@@ -15,7 +16,8 @@ const ThemeableChecklistItem = themeable(Checklist.Item, (customizations, props)
   customize: {
     ...props.customize,
     strokeColor: customizations.color_detail,
-    borderRadius: customizations.radius_border
+    // TODO: border-radii are not themeable/customizable yet, but we can support 0px, e.g. squared design
+    borderRadius: customizations.radius_border === '0px' ? '0px' : undefined,
   }
 }))
 
