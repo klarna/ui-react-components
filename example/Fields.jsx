@@ -186,10 +186,12 @@ export default function Fields () {
 
       <SecondaryTitle margins>Themeable</SecondaryTitle>
       <Code>
-        <Theme customizations={{color_border: '#660080', color_border_selected: '#00ce3e', color_text_secondary: '#ff7777', radius_border: '0px'}}>
-          <div>
-            <ThemeableField label='Address' value='16, Corn street' />
-          </div>
+        <Theme customizations={{color_border: '#660080', color_border_selected: '#00ce3e', color_text_secondary: '#ff7777', radius_border: '8px'}}>
+          <Fieldset>
+            <ThemeableField top label='Address' value='16, Corn street' focus='fake' />
+            <ThemeableField square label='Given name' />
+            <ThemeableField bottom label='Family name' />
+          </Fieldset>
         </Theme>
       </Code>
     </div>

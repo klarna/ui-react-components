@@ -8,8 +8,7 @@ export default themeable(Button, (customizations, props) => ({
   customize: {
     ...props.customize,
     backgroundColor: customizations.color_button,
-    // TODO: border-radii are not themeable/customizable yet, but we can support 0px, e.g. squared design
-    borderRadius: customizations.radius_border === '0px' ? '0px' : undefined,
+    borderRadius: customizations.radius_border,
     textColor: customizations.color_button_text
   }
 }))

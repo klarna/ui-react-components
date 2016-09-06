@@ -29,7 +29,7 @@ export default function Checklists () {
 
       <SecondaryTitle margins>Themeable</SecondaryTitle>
       <Code>
-        <Theme customizations={{color_border: '#660080', color_detail: '#00ce3e', radius_border: '0px'}}>
+        <Theme customizations={{color_border: '#660080', color_detail: '#00ce3e', radius_border: '8px'}}>
           <ThemeableChecklist>
             <ThemeableChecklist.Item>Just one click and you're done</ThemeableChecklist.Item>
             <ThemeableChecklist.Item>Very little hassle</ThemeableChecklist.Item>
