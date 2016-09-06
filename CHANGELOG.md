@@ -1,3 +1,7 @@
+# 0.14.1
+
+- Fixed missing borderColor on themeable Installments
+
 # 0.14.0
 
 - Add Theme and themeable for several components
