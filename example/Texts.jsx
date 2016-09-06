@@ -3,6 +3,11 @@ import Code from './Code'
 import Block from '../components/Block'
 import { Amount, PrimaryTitle, SecondaryTitle, Subtitle, Paragraph, TextLabel } from '../components/Text'
 import Link from '../components/Link'
+import Theme from '../components/Theme'
+import ThemeableParagraph from '../components/themeable/texts/Paragraph'
+import ThemeablePrimaryTitle from '../components/themeable/texts/PrimaryTitle'
+import ThemeableSecondaryTitle from '../components/themeable/texts/SecondaryTitle'
+import ThemeableSubtitle from '../components/themeable/texts/Subtitle'
 
 export default function Texts () {
   return (
@@ -81,7 +86,6 @@ export default function Texts () {
             Some paragraph with <Link color='white' href='#'>a link</Link>.
           </Paragraph>
         </Block>
-
       </Code>
 
       <SecondaryTitle small color='blue' margins>Amount</SecondaryTitle>
@@ -92,6 +96,41 @@ export default function Texts () {
         <Block blue>
           <Amount color='white'>1500€</Amount>
         </Block>
+      </Code>
+
+      <SecondaryTitle>Themeable</SecondaryTitle>
+      <Code>
+        <Theme customizations={{color_header: '#00ce3e', color_text: '#660080', color_text_secondary: 'red'}}>
+          <div>
+            <ThemeablePrimaryTitle margins>
+              Hello from the other side
+            </ThemeablePrimaryTitle>
+
+            <ThemeableSecondaryTitle margins>
+              Hello from the other side
+            </ThemeableSecondaryTitle>
+
+            <ThemeableSubtitle margins>
+              Hello from the other side
+            </ThemeableSubtitle>
+
+            <ThemeableParagraph margins>
+              Primary Paragraph, default design
+            </ThemeableParagraph>
+
+            <ThemeableParagraph margins design='primary'>
+              Primary Paragraph, primary design
+            </ThemeableParagraph>
+
+            <ThemeableParagraph margins design='secondary'>
+              Primary Paragraph, secondary design
+            </ThemeableParagraph>
+
+            <ThemeableParagraph margins design='legal'>
+              Primary Paragraph, legal design
+            </ThemeableParagraph>
+          </div>
+        </Theme>
       </Code>
     </div>
   )

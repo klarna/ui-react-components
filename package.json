@@ -13,9 +13,10 @@
   },
   "author": "Klarna front end people",
   "dependencies": {
-    "@klarna/ui-css-components": "9.2.2",
+    "@klarna/ui-css-components": "9.3.0",
     "classnames": "2.2.5",
-    "parse-color": "1.0.0"
+    "parse-color": "1.0.0",
+    "react-context-props": "^0.1.3"
   },
   "peerDependencies": {
     "react": "^15.0.2"

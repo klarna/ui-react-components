@@ -1,5 +1,7 @@
 import React from 'react'
 import Switch from '../components/Switch'
+import Theme from '../components/Theme'
+import ThemeableSwitch from '../components/themeable/Switch'
 import Button from '../components/Button'
 import { SecondaryTitle } from '../components/Text'
 import Code from './Code'
@@ -70,6 +72,12 @@ export default function Switches () {
         }}>Would you like fries?</Switch>
       </Code>
 
+      <SecondaryTitle margins>Themeable</SecondaryTitle>
+      <Code>
+        <Theme customizations={{color_checkbox: '#660080', color_checkbox_checkmark: '#00ce3e'}}>
+          <ThemeableSwitch name='fries'>Would you like fries?</ThemeableSwitch>
+        </Theme>
+      </Code>
     </div>
   )
 }

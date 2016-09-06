@@ -94,7 +94,14 @@ export default class Field extends Component {
     const dynamicStyles = useDynamicStyles
     ? {
       borderColor: this.state.hover || focus ? customize.borderColorSelected : customize.borderColor,
+      borderRadius: customize.borderRadius,
       boxShadow: focus && `0 0 4px ${customize.borderColorSelected}`
+    }
+    : undefined
+
+    const labelDynamicStyles = useDynamicStyles
+    ? {
+      color: customize.labelColor
     }
     : undefined
 
@@ -114,7 +121,7 @@ export default class Field extends Component {
           })
         }
 
-        <label className={classes.label}>{label}</label>
+        <label className={classes.label} style={labelDynamicStyles}>{label}</label>
 
         <input
           className={classes.input}
@@ -149,7 +156,9 @@ Field.propTypes = {
   centered: PropTypes.bool,
   customize: PropTypes.shape({
     borderColor: PropTypes.string.isRequired,
-    borderColorSelected: PropTypes.string.isRequired
+    borderColorSelected: PropTypes.string.isRequired,
+    borderRadius: PropTypes.string.isRequired,
+    labelColor: PropTypes.string.isRequired
   }),
   loading: PropTypes.bool,
   label: PropTypes.string.isRequired,

@@ -28,7 +28,7 @@ describe('Installments', () => {
 
   describe('first option', () => {
     describe('input', () => {
-      const input = child(installments, 0)
+      const input = child(installments, 0)[0]
 
       it('is a radio input', () => {
         equal(input.type, 'input')
@@ -53,7 +53,7 @@ describe('Installments', () => {
     })
 
     describe('label', () => {
-      const label = child(installments, 1)
+      const label = child(installments, 0)[1]
 
       it('is a label', () => {
         equal(label.type, 'label')
@@ -65,22 +65,6 @@ describe('Installments', () => {
 
       it('has htmlFor "installments-key-1"', () => {
         equal(label.props.htmlFor, 'installments-key-1')
-      })
-
-      describe('value', () => {
-        const value = label.props.children[0]
-
-        it('is a "span"', () => {
-          equal(value.type, 'span')
-        })
-
-        it('has className "cui__selector--installments__label__value"', () => {
-          equal(value.props.className, 'cui__selector--installments__label__value')
-        })
-
-        it('has the value content', () => {
-          equal(value.props.children, 'Value 1')
-        })
       })
 
       describe('connector', () => {
@@ -119,7 +103,7 @@ describe('Installments', () => {
 
   describe('second option', () => {
     describe('input', () => {
-      const input = child(installments, 2)
+      const input = child(installments, 1)[0]
 
       it('is a radio input', () => {
         equal(input.type, 'input')
@@ -144,7 +128,7 @@ describe('Installments', () => {
     })
 
     describe('label', () => {
-      const label = child(installments, 3)
+      const label = child(installments, 1)[1]
 
       it('is a label', () => {
         equal(label.type, 'label')
