@@ -1,3 +1,7 @@
+# 0.14.0
+
+- Add Theme and themeable for several components
+
 # 0.13.2
 
 - Fix dynamic styling of input border
