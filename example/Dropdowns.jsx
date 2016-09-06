@@ -1,8 +1,10 @@
 import React from 'react'
-import { SecondaryTitle, Subtitle } from '../components/Text'
+import { SecondaryTitle, Subtitle, Paragraph } from '../components/Text'
 import Code from './Code'
 import Dropdown from '../components/Dropdown'
 import Fieldset from '../components/Fieldset'
+import Theme from '../components/Theme'
+import ThemeableDropdown from '../components/themeable/Dropdown'
 
 export default function Dropdowns () {
   const options = [
@@ -104,6 +106,18 @@ export default function Dropdowns () {
       <Subtitle margins>No options</Subtitle>
       <Code>
         <Dropdown label='No options really' />
+      </Code>
+
+      <SecondaryTitle margins>Themeable</SecondaryTitle>
+      <Paragraph margins>Currently no support for border radii.</Paragraph>
+      <Code>
+        <Theme customizations={{color_border: '#660080', color_border_selected: '#00ce3e', color_text_secondary: 'red', radius_border: '8px'}}>
+          <Fieldset>
+            <ThemeableDropdown top label='Given name' options={options} />
+            <ThemeableDropdown square label='Middle name' options={options} />
+            <ThemeableDropdown bottom label='Last name' options={options} focus='fake' />
+          </Fieldset>
+        </Theme>
       </Code>
     </div>
   )
