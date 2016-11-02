@@ -4,7 +4,7 @@
 [![Code Climate](https://codeclimate.com/github/klarna/ui-react-components/badges/gpa.svg)](https://codeclimate.com/github/klarna/ui-react-components)
 [![npm version](https://img.shields.io/npm/v/@klarna/ui-react-components.svg?maxAge=2592000)](https://www.npmjs.com/package/@klarna/ui-react-components)
 
-**Note: This project and it's sister project [Klarna UI CSS Components](https://github.com/klarna/ui-css-components) are in their way to being deprecated in favor of the unified [Klarna UI Components](https://github.com/klarna/ui). There will be a migration guide once the new Klarna UI Components hit 1.0 and we expect the migration effort for consumers to be small.**
+## Note: This project and its sister project [klarna/ui-css-components](https://github.com/klarna/ui-css-components) are deprecated. Use [@klarna/ui](https://github.com/klarna/ui) instead.
 
 This library is a [React](https://facebook.github.io/react/) wrapper on top of [ui-css-components](https://github.com/klarna/ui-css-components).
 
