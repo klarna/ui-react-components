@@ -1,6 +1,10 @@
 var webpackConfig = require('./webpack.config.test.js')
 var argv = require('yargs').argv
 
+if (argv.reporters.match('saucelabs')) {
+  webpackConfig = require('./webpack.config.js')
+}
+
 var browserToUse = ['PhantomJS']
 if (process.env.BROWSER) {
   browserToUse = process.env.BROWSER.split(',')
@@ -28,7 +32,22 @@ module.exports = function (config) {
       noInfo: true
     },
 
-    reporters: ['spec', 'saucelabs'],
+    reporters: ['spec'],
+
+    coverageReporter: {
+      reporters: [
+        { type: 'html', dir: 'coverage' },
+        { type: 'text' }
+      ],
+      check: {
+        global: {
+          statements: 100,
+          branches: 100,
+          functions: 100,
+          lines: 100
+        }
+      }
+    },
 
     colors: true,
     logLevel: config.LOG_INFO,

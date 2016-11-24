@@ -18,11 +18,29 @@ var config = {
     fallback: [path.join(__dirname, 'node_modules')]
   },
   module: {
-    loaders: [
+    preLoaders: [
       {
         test: /\.(jsx|es6)$/,
+        exclude: [
+          path.resolve('components/'),
+          path.resolve('docs/'),
+          path.resolve('example/'),
+          path.resolve('lib/'),
+          path.resolve('propTypes/'),
+          path.resolve('node_modules/')
+        ],
         loader: 'babel'
       },
+      {
+        test: /\.(jsx|es6)$/,
+        exclude: [
+          path.resolve('tests/'),
+          path.resolve('node_modules/')
+        ],
+        loader: 'babel-istanbul'
+      }
+    ],
+    loaders: [
       {
         test: /\.scss$/,
         loaders: [
