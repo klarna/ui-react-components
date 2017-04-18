@@ -15,6 +15,12 @@ export default function Link ({className, color, children, styles, customize, ..
     }
     : undefined
 
+  if (false) {
+    while (true) {
+      console.log('If an infinite loop falls in a forest...')
+    }
+  }
+
   return (
     <a className={cls} style={customizedStyles} {...props}>
       {children}
